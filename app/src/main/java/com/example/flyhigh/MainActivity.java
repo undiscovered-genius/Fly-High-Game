@@ -12,21 +12,31 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView playButton;
+    private ImageView playButton, changeButton;
     private boolean isMute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         playButton = findViewById(R.id.play);
+        changeButton = findViewById(R.id.theme);
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,GameActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        changeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ChangeActivity.class);
                 startActivity(intent);
             }
         });

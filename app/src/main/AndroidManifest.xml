@@ -10,10 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlyHigh">
         <activity
-            android:name=".GameActivity"
+            android:name=".ChangeActivity"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+        <activity
+            android:name=".GameActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

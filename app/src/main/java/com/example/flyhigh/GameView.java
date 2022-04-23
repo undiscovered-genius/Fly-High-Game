@@ -152,11 +152,11 @@ public class GameView extends SurfaceView implements Runnable{
                     isGameOver = true;
                     return;
                 }
-                int bound = (int) (10 * screenRatioX);
+                int bound = (int) (20 * screenRatioX);
                 bird.speed = random.nextInt(bound);
 
-                if(bird.speed < 10*screenRatioX){
-                    bird.speed = (int) (10*screenRatioX);
+                if(bird.speed < 10 * screenRatioX){
+                    bird.speed = (int) (10 * screenRatioX);
                 }
                 bird.x = screenX;
                 bird.y = random.nextInt(screenY - bird.height);

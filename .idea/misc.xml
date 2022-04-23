@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/drawable/border.xml" value="0.2645" />
+        <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/drawable/ic_backspace.xml" value="0.2645" />
         <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/drawable/ic_build_circle_24.xml" value="0.2645" />
         <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/drawable/ic_play_circle.xml" value="0.2645" />
+        <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/layout/activity_change.xml" value="0.259375" />
         <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/layout/activity_main.xml" value="0.23007246376811594" />
         <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.125" />
         <entry key="..\:/cs/android studio/FlyHigh/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.125" />
