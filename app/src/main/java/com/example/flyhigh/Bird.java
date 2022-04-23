@@ -16,9 +16,9 @@ public class Bird {
 
     Bird(Resources res){
         bird1 = BitmapFactory.decodeResource(res, R.drawable.b3a);
-        bird2 = BitmapFactory.decodeResource(res, R.drawable.b3b);
+        bird2 = BitmapFactory.decodeResource(res, R.drawable.b3a);
         bird3 = BitmapFactory.decodeResource(res, R.drawable.b3b);
-        bird4 = BitmapFactory.decodeResource(res, R.drawable.b3a);
+        bird4 = BitmapFactory.decodeResource(res, R.drawable.b3b);
 
         width = bird1.getWidth();
         height = bird1.getHeight();
@@ -26,8 +26,8 @@ public class Bird {
         width /= 2;
         height /= 2;
 
-        width *= (int) screenRatioX;
-        height *= (int) screenRatioY;
+        width = (int) (width * screenRatioX);
+        height = (int) (height * screenRatioY);
 
         bird1 = Bitmap.createScaledBitmap(bird1, width, height, false);
         bird2 = Bitmap.createScaledBitmap(bird2, width, height, false);
