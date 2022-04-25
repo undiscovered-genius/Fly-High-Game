@@ -2,6 +2,7 @@ package com.example.flyhigh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,22 @@ public class ChangeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 onBackPressed();
                 finish();
+            }
+        });
+
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChangeActivity.this,LocationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        plane.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChangeActivity.this,PlaneActivity.class);
+                startActivity(intent);
             }
         });
     }

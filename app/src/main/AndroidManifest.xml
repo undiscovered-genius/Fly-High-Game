@@ -10,10 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlyHigh">
         <activity
+            android:name=".PlaneActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".LocationActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
             android:name=".ChangeActivity"
             android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
             android:name=".GameActivity"
             android:exported="false"

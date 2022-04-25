@@ -16,38 +16,72 @@ public class Flight {
     Bitmap flight1, flight2, shoot1, shoot2, shoot3, shoot4, shoot5, dead;
     private GameView gameView;
 
-    Flight(GameView gameView, int screenY, Resources res){
+    Flight(int plane, GameView gameView, int screenY, Resources res){
 
         this.gameView = gameView;
-        flight1 = BitmapFactory.decodeResource(res, R.drawable.p1a);
-        flight2 = BitmapFactory.decodeResource(res, R.drawable.p1b);
 
-        width = flight1.getWidth();
-        height = flight2.getHeight();
+        if (plane == 1){
+            flight1 = BitmapFactory.decodeResource(res, R.drawable.p1a);
+            flight2 = BitmapFactory.decodeResource(res, R.drawable.p1b);
 
-        width /= 4;
-        height /= 4;
+            width = flight1.getWidth();
+            height = flight2.getHeight();
 
-        width = (int) (width * screenRatioX);
-        height = (int) (height * screenRatioY);
+            width /= 4;
+            height /= 4;
 
-        flight1 = Bitmap.createScaledBitmap(flight1, width, height, false);
-        flight2 = Bitmap.createScaledBitmap(flight2, width, height, false);
+            width = (int) (width * screenRatioX);
+            height = (int) (height * screenRatioY);
 
-        shoot1 = BitmapFactory.decodeResource(res, R.drawable.p1c);
-        shoot2 = BitmapFactory.decodeResource(res, R.drawable.p1d);
-        shoot3 = BitmapFactory.decodeResource(res, R.drawable.p1e);
-        shoot4 = BitmapFactory.decodeResource(res, R.drawable.p1f);
-        shoot5 = BitmapFactory.decodeResource(res, R.drawable.p1g);
+            flight1 = Bitmap.createScaledBitmap(flight1, width, height, false);
+            flight2 = Bitmap.createScaledBitmap(flight2, width, height, false);
 
-        shoot1 = Bitmap.createScaledBitmap(shoot1, width, height, false);
-        shoot2 = Bitmap.createScaledBitmap(shoot2, width, height, false);
-        shoot3 = Bitmap.createScaledBitmap(shoot3, width, height, false);
-        shoot4 = Bitmap.createScaledBitmap(shoot4, width, height, false);
-        shoot5 = Bitmap.createScaledBitmap(shoot5, width, height, false);
+            shoot1 = BitmapFactory.decodeResource(res, R.drawable.p1c);
+            shoot2 = BitmapFactory.decodeResource(res, R.drawable.p1d);
+            shoot3 = BitmapFactory.decodeResource(res, R.drawable.p1e);
+            shoot4 = BitmapFactory.decodeResource(res, R.drawable.p1f);
+            shoot5 = BitmapFactory.decodeResource(res, R.drawable.p1g);
 
-        dead = BitmapFactory.decodeResource(res,R.drawable.p1h);
-        dead = Bitmap.createScaledBitmap(dead, width, height, false);
+            shoot1 = Bitmap.createScaledBitmap(shoot1, width, height, false);
+            shoot2 = Bitmap.createScaledBitmap(shoot2, width, height, false);
+            shoot3 = Bitmap.createScaledBitmap(shoot3, width, height, false);
+            shoot4 = Bitmap.createScaledBitmap(shoot4, width, height, false);
+            shoot5 = Bitmap.createScaledBitmap(shoot5, width, height, false);
+
+            dead = BitmapFactory.decodeResource(res,R.drawable.p1h);
+            dead = Bitmap.createScaledBitmap(dead, width, height, false);
+        }else {
+            flight1 = BitmapFactory.decodeResource(res, R.drawable.p8a);
+            flight2 = BitmapFactory.decodeResource(res, R.drawable.p8b);
+
+            width = flight1.getWidth();
+            height = flight2.getHeight();
+
+            width /= 4;
+            height /= 4;
+
+            width = (int) (width * screenRatioX);
+            height = (int) (height * screenRatioY);
+
+            flight1 = Bitmap.createScaledBitmap(flight1, width, height, false);
+            flight2 = Bitmap.createScaledBitmap(flight2, width, height, false);
+
+            shoot1 = BitmapFactory.decodeResource(res, R.drawable.p8c);
+            shoot2 = BitmapFactory.decodeResource(res, R.drawable.p8d);
+            shoot3 = BitmapFactory.decodeResource(res, R.drawable.p8e);
+            shoot4 = BitmapFactory.decodeResource(res, R.drawable.p8f);
+            shoot5 = BitmapFactory.decodeResource(res, R.drawable.p8g);
+
+            shoot1 = Bitmap.createScaledBitmap(shoot1, width, height, false);
+            shoot2 = Bitmap.createScaledBitmap(shoot2, width, height, false);
+            shoot3 = Bitmap.createScaledBitmap(shoot3, width, height, false);
+            shoot4 = Bitmap.createScaledBitmap(shoot4, width, height, false);
+            shoot5 = Bitmap.createScaledBitmap(shoot5, width, height, false);
+
+            dead = BitmapFactory.decodeResource(res,R.drawable.p8b);
+            dead = Bitmap.createScaledBitmap(dead, width, height, false);
+        }
+
 
         y = screenY / 2;
         x = (int) (64 * screenRatioX);

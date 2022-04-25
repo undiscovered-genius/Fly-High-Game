@@ -11,6 +11,7 @@ import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 
@@ -28,11 +29,11 @@ public class GameView extends SurfaceView implements Runnable{
     private Flight flight;
     private Random random;
     private Bird[] birds;
-    private SharedPreferences prefs;
+    private SharedPreferences prefs, loc, pln;
     private SoundPool soundPool;
     private List<Bullet> bullets;
     private GameActivity activity;
-    private int sound;
+    private int sound, location=1, plane=1;
     private Background background1, background2;
 
     public GameView(GameActivity activity, int screenX, int screenY) {
@@ -40,6 +41,8 @@ public class GameView extends SurfaceView implements Runnable{
 
         this.activity = activity;
         prefs = activity.getSharedPreferences("game", Context.MODE_PRIVATE);
+        loc = activity.getSharedPreferences("location", Context.MODE_PRIVATE);
+        pln = activity.getSharedPreferences("plane", Context.MODE_PRIVATE);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
@@ -67,10 +70,22 @@ public class GameView extends SurfaceView implements Runnable{
         paint.setTextSize(128);
         paint.setColor(Color.WHITE);
 
-        background1 = new Background(screenX, screenY, getResources());
-        background2 = new Background(screenX, screenY, getResources());
+        location = loc.getInt("location",0);
+        Log.d("LOCATION", "GameView: "+loc.getInt("location",0)+" - "+location);
+        if (location <= 0 ){
+            location = 1;
+        }
 
-        flight = new Flight(this, screenY, getResources());
+        plane = pln.getInt("plane",0);
+        Log.d("PLANE", "GameView: "+pln.getInt("plane",0)+" - "+plane);
+        if (plane <= 0 ){
+            plane = 1;
+        }
+
+        background1 = new Background(location, screenX, screenY, getResources());
+        background2 = new Background(location, screenX, screenY, getResources());
+
+        flight = new Flight( plane,this, screenY, getResources());
 
         bullets = new ArrayList<>();
 
@@ -207,7 +222,7 @@ public class GameView extends SurfaceView implements Runnable{
 
     private void waitBeforeExiting() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             activity.startActivity(new Intent(activity, MainActivity.class));
             activity.finish();
         } catch (InterruptedException e) {
