@@ -21,12 +21,21 @@ public class ChangeActivity extends AppCompatActivity {
         ImageView back = findViewById(R.id.back);
         ImageView plane = findViewById(R.id.plane);
         ImageView location = findViewById(R.id.location);
+        ImageView bird = findViewById(R.id.bird);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
                 finish();
+            }
+        });
+
+        bird.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChangeActivity.this,BirdActivity.class);
+                startActivity(intent);
             }
         });
 

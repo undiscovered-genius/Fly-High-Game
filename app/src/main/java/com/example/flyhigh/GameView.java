@@ -29,11 +29,11 @@ public class GameView extends SurfaceView implements Runnable{
     private Flight flight;
     private Random random;
     private Bird[] birds;
-    private SharedPreferences prefs, loc, pln;
+    private SharedPreferences prefs, loc, pln, brd;
     private SoundPool soundPool;
     private List<Bullet> bullets;
     private GameActivity activity;
-    private int sound, location=1, plane=1;
+    private int sound, location=1, plane=1, birdd=1;
     private Background background1, background2;
 
     public GameView(GameActivity activity, int screenX, int screenY) {
@@ -43,6 +43,7 @@ public class GameView extends SurfaceView implements Runnable{
         prefs = activity.getSharedPreferences("game", Context.MODE_PRIVATE);
         loc = activity.getSharedPreferences("location", Context.MODE_PRIVATE);
         pln = activity.getSharedPreferences("plane", Context.MODE_PRIVATE);
+        brd = activity.getSharedPreferences("bird", Context.MODE_PRIVATE);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
@@ -91,9 +92,15 @@ public class GameView extends SurfaceView implements Runnable{
 
         background2.x = screenX;
 
+        birdd = brd.getInt("bird",0);
+        Log.d("BIRD", "GameView: "+brd.getInt("bird",0)+" - "+birdd);
+        if (birdd <= 0 ){
+            birdd = 1;
+        }
+
         birds = new Bird[4];
         for (int i = 0; i<4; i++){
-            Bird bird = new Bird(getResources());
+            Bird bird = new Bird(birdd, getResources());
             birds[i] = bird;
         }
 

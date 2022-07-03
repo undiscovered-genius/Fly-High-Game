@@ -14,11 +14,20 @@ public class Bird {
     int x = 0, y, width, height, birdCounter = 1;
     Bitmap bird1, bird2, bird3, bird4;
 
-    Bird(Resources res){
-        bird1 = BitmapFactory.decodeResource(res, R.drawable.b3a);
-        bird2 = BitmapFactory.decodeResource(res, R.drawable.b3a);
-        bird3 = BitmapFactory.decodeResource(res, R.drawable.b3b);
-        bird4 = BitmapFactory.decodeResource(res, R.drawable.b3b);
+    Bird(int bird, Resources res){
+
+        if (bird == 1){
+            bird1 = BitmapFactory.decodeResource(res, R.drawable.b3a);
+            bird2 = BitmapFactory.decodeResource(res, R.drawable.b3a);
+            bird3 = BitmapFactory.decodeResource(res, R.drawable.b3b);
+            bird4 = BitmapFactory.decodeResource(res, R.drawable.b3b);
+        }else{
+            bird1 = BitmapFactory.decodeResource(res, R.drawable.b1a);
+            bird2 = BitmapFactory.decodeResource(res, R.drawable.b1a);
+            bird3 = BitmapFactory.decodeResource(res, R.drawable.b1b);
+            bird4 = BitmapFactory.decodeResource(res, R.drawable.b1b);
+        }
+
 
         width = bird1.getWidth();
         height = bird1.getHeight();
