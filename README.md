@@ -8,15 +8,15 @@
 
 # App Interface
 <center>
-<p> <img src = "PICS\home.png" height="300">    <img src = "PICS\change.png" height="300"> </p><br>
+<p> <img src = "PICS\home.png" height="200">    <img src = "PICS\change.png" height="200"> </p><br>
 
-<p> <img src = "PICS\game1.png" height="300">    <img src = "PICS\game2.png" height="300"> </p><br>
+<p> <img src = "PICS\game1.png" height="200">    <img src = "PICS\game2.png" height="200"> </p><br>
 
-<p> <img src = "PICS\location1.png" height="300">    <img src = "PICS\location2.png" height="300"> </p><br>
+<p> <img src = "PICS\location1.png" height="200">    <img src = "PICS\location2.png" height="200"> </p><br>
 
-<p> <img src = "PICS\plane1.png" height="300">    <img src = "PICS\plane2.png" height="300"> </p><br>
+<p> <img src = "PICS\plane1.png" height="200">    <img src = "PICS\plane2.png" height="200"> </p><br>
 
-<p> <img src = "PICS\bird1.png" height="300">    <img src = "PICS\bird2.png" height="300"> </p><br>
+<p> <img src = "PICS\bird1.png" height="200">    <img src = "PICS\bird2.png" height="200"> </p><br>
 
 </center>
 
